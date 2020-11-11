@@ -1,0 +1,66 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Maak je eigen Phaser 3 game!</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var instellingen = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    physics: {
+
+    },
+    scene: {
+        preload: spelLaden,
+        create: spelOpbouwen,
+        update: spelUpdaten
+    }
+};
+
+var speler;
+var sterren;
+var bommen;
+var grond;
+var cursors;
+var score = 0;
+var gameOver = false;
+var scoreTekst;
+
+var game = new Phaser.Game(instellingen);
+
+function spelLaden ()
+{
+    this.load.image('achtergrond', 'afbeeldingen/achtergrond.png');
+    this.load.image('platform', 'afbeeldingen/platform.png');
+    this.load.image('ster', 'afbeeldingen/ster.png');
+    this.load.image('bom', 'afbeeldingen/bom.png');
+    this.load.spritesheet('speler', 'afbeeldingen/speler.png', { frameWidth: 32, frameHeight: 48 });
+}
+
+function spelOpbouwen ()
+{
+
+}
+
+function spelUpdaten ()
+{
+
+}
+
+
+
+</script>
+
+</body>
+</html>
