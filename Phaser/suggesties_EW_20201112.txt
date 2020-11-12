@@ -1,0 +1,51 @@
+phaser-workshop.odt
+
+p1: - omdat sommige mensen windows hebben.
+
+- Ctrl+ s 		in de editor, om de wijzigingen op te slaan
+- F5 (of Ctrl +r) 	in Chrome om de wijzigingen te laden
+
+Mochten we Visual Studio Code gaan gebruiken:
+Shift + Alt + f 	in de editor om de ingevoegde code netjes te ordenen.
+
+Mochten we google/VSC Javascript-stijl gebruiken dan zou function spelOpbouwen iets anders worden (en haal gelijk de lege regel weg)
+Pas weer Cmd+s en Cmd+r aan als we windows-laptops gaan gebruiken.
+
+p2: 
+Pas de variabele... 
+Ik ben ergens bang dat kinderen gaan denken dat de tekst ook blauw moet zijn. Mogelijk een onterechte vrees, zelf zou ik eerder de tekst normaal maken en een rode gestippelde box om de nieuwe code zetten, die buiten het zwart reikt.
+
+En weer zou de codestijl kunnen worden gecleand..
+
+p3.
+Soms hebben we het over speler, soms hebben we het over 'poppetje'. Ik denk dat het handiger is consistent te zijn tussen handleiding en code. Zelf zou ik geen 'speler' gebruiken, want dat zijn de kinderen zelf, ik zou gaan voor 'poppetje' of 'held' of desnoods 'mierenman'.
+
+p4. In principe kunnen we left en right en turn hier ook vertalen, bv naar 'links'/'naar_links', 'naar_rechts', 'keer_om'
+(en weer zouden we de code netter kunnen maken. Scheelt hier ook veel zwarte inkt!)
+
+p5 En, kan die lopen en springen? => en, kan het lopen en springen (tenzij we een ander woord gebruiken dan poppetje)
+
+p6 "Controleer of de sterren in  verschijnen als je opslaat en de browser ververst." 
+Of in moet weg, of er moet iets staan als 'in het beeld'
+
+p7 Controleer of de score verandert als je een ster pakt.  Sla weer op en de browser ververst. 
+Ik neem aan dat het laatste moet zijn "Sla weer op en ververs de browser"?
+
+
+code:
+basaal: ruim het een beetje op met visual studio (suggestie!), dus codestijl naar standaard JavaScript 
+
+Verdere suggesties:
+iets minder lege regels (zie bv 
+  sterren.children.iterate(function (child) {
+
+        child.enableBody(true, child.x, 0, true, true);
+
+    });
+	
+Persoonlijk zou ik om even wel modern JavaScript te schrijven de var-declaraties vervangen door let-declaraties (https://medium.com/podiihq/javascript-variables-should-you-use-let-var-or-const-394f7645c88f) al was het maar om een niet al te slechte indruk te maken als een deelnemer of een ouder toevallig al JavaScript kent... (en zijn we professionele programmeurs of niet?)
+
+dus 
+let speler;
+let sterren; 
+// etc.
