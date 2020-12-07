@@ -1,6 +1,7 @@
 = Hoi
 :source-highlighter: rouge
 
+
 Leuk dat je meedoet met de Phaser workshop! Hieronder volgen de stappen die je moet doen om de game te maken.
 
 Je gaat het bestand 'game.html' aanpassen totdat de game werkt.
@@ -54,7 +55,7 @@ Pas nu de 'spelOpbouwen' functie aan zodat hij er zo uitziet:
 [source,js]
 ----
 function spelOpbouwen() {
-    //  Hier voegen we de afbeelding 'achtergrond.png' toe als als achtergrond
+    // Hier voegen we de afbeelding 'achtergrond.png' toe als als achtergrond
     this.add.image(400, 300, 'achtergrond');
 
     // Onze speler heeft grond nodig om op te lopen. Dat doen we hier
@@ -77,7 +78,7 @@ Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al
 ----
 // En nu voegen we de speler toe.
 speler = this.physics.add.sprite(100, 450, 'speler');
-//  De speler mag uit het spel kunnen lopen!
+// De speler mag uit het spel kunnen lopen!
 speler.setBounce(0.2);
 speler.setCollideWorldBounds(true);
 this.physics.add.collider(speler, grond);
@@ -186,7 +187,11 @@ function sterPakken(speler, ster) {
 ----
 
 en voeg onderaan de spelOpbouwen functie de volgende code toe:
+
+[source,js]
+----
 this.physics.add.overlap(speler, sterren, sterPakken, null, this);
+----
 
 En? Kun je nu sterren oppakken?
 
@@ -210,7 +215,7 @@ function sterPakken(speler, ster) {
     scoreTekst.setText('Score: ' + score);
 }
 ----
-Controleer of de score verandert als je een ster pakt.  Sla weer op en de browser ververst.
+Controleer of de score verandert als je een ster pakt. Sla de code weer op en ververs de browser.
 
 == 9. Voeg de bommen toe
 Alleen maar sterren verzamelen is wel een beetje makkelijk. Laten we het wat spannender maken. Voeg onderstaande code toe aan het einde van de 'spelOpbouwen' functie zodat er bommen in het spel verschijnen:

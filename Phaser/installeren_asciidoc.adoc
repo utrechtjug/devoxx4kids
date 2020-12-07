@@ -6,7 +6,7 @@ v1.0, 2020-12-07
 :imagesdir: ./asciidoc_images
 
 == 1. Installeren van AsciiDoc(tor)
-Om tekstfiles die een AsciiDoc formaat hebben in .html of .pdf files om te zetten is de software AsciiDoctor nodig. Deze kan het gemakkelijkst worden als een Ruby gem, maar daarvoor moet je wel eerst Ruby geinstalleerd hebben.
+Om tekstfiles die een AsciiDoc formaat hebben in .html of .pdf files om te zetten is de software AsciiDoctor nodig. Deze kan het gemakkelijkst worden gedownload als een Ruby gem, maar daarvoor moet je wel eerst Ruby geïnstalleerd hebben.
 Om de teksten uit deze directory mooi om te zetten in html en pdf moet je dus het volgende gedaan hebben:
 
 - download en installeer https://www.ruby-lang.org/en/downloads/[Ruby]
