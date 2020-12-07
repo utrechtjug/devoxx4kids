@@ -8,8 +8,13 @@ Je gaat het bestand 'game.html' aanpassen totdat de game werkt.
 
 Als je de code hebt aangepast doe dan het volgende om te testen of het werkt:
 
-- Cmd + s 	in de editor, om de wijzigingen op te slaan +
-- Cmd + r	in Chrome om de wijzigingen te laden
+[horizontal]
+Ctrl + s:: in de editor, om de wijzigingen op te slaan +
+F5 (of Ctrl + r):: in Chrome om de wijzigingen te laden
+
+In Visual Studio Code (de editor) is het volgende handig:
+[horizontal]
+Shift + Alt + f:: in de editor om de ingevoegde code netjes te ordenen
 
 Succes!
 
@@ -24,11 +29,11 @@ function spelOpbouwen() {
 }
 ----
 
-Je hebt nu de blauwe lucht gemaakt! Controleer met Cmd+s in de editor en Cmd +r in Chrome of het gelukt is.
+Je hebt nu de blauwe lucht gemaakt! Controleer met Ctrl + s in de editor en F5 (or Ctrl + r) in Chrome of het gelukt is.
 
 == 2. Platforms toevoegen
 
-Pas de variabele 'instellingen' aan zodat deze er zo uitziet:
+Pas de variabele 'instellingen' aan zodat deze er zo uitziet (voeg het stuk na 'physics:' toe):
 
 [source,js]
 ----
@@ -93,20 +98,20 @@ Onze held kan nog niet zoveel ☹.  Plak de volgende code helemaal onderaan in d
 ----
 // Onze speler moet kunnen bewegen. Dat regelen we hier.
 this.anims.create({
-    key: 'left',
+    key: 'naar_links',
     frames: this.anims.generateFrameNumbers('speler', { start: 0, end: 3 }),
     frameRate: 10,
     repeat: -1
 });
 
 this.anims.create({
-    key: 'turn',
+    key: 'keer_om',
     frames: [ { key: 'speler', frame: 4 } ],
     frameRate: 20
 });
 
 this.anims.create({
-    key: 'right',
+    key: 'naar_rechts',
     frames: this.anims.generateFrameNumbers('speler', { start: 5, end: 8 }),
     frameRate: 10,
     repeat: -1
@@ -126,13 +131,13 @@ function spelUpdaten() {
 
     if (cursors.left.isDown) {
         speler.setVelocityX(-160);
-        speler.anims.play('left', true);
+        speler.anims.play('naar_links', true);
     } else if (cursors.right.isDown) {
         speler.setVelocityX(160);
-        speler.anims.play('right', true);
+        speler.anims.play('naar_rechts', true);
     } else {
         speler.setVelocityX(0);
-        speler.anims.play('turn');
+        speler.anims.play('keer_om');
     }
 
     if (cursors.up.isDown && speler.body.touching.down) {
@@ -141,11 +146,11 @@ function spelUpdaten() {
 }
 ----
 
-Controleer of het poppetje beweegt als je pijltjestoetsen gebruikt. En, kan die lopen en springen?
+Controleer of het poppetje beweegt als je pijltjestoetsen gebruikt. En, kan het lopen en springen?
 
 == 5. Voeg de sterren toe
 Het poppetje moet natuurlijk wel iets te doen hebben in het spel. In dit spel gaan we sterren verzamelen waar we punten voor krijgen. 
-Plak de volgende code aan het onderaan de 'spelOpbouwen' functie:
+Plak de volgende code onderaan de 'spelOpbouwen' functie:
 
 [source,js]
 ----
@@ -163,7 +168,7 @@ sterren.children.iterate(function (child) {
 });
 ----
 
-Controleer of de sterren in  verschijnen als je opslaat en de browser ververst.
+Controleer of de sterren in het beeld verschijnen als je de code opslaat en de browser ververst.
 
 == 6. Laat de sterren niet uit het scherm vallen
 Oh oh, wat gebeurde daar nou? De sterren blijven niet op de grond liggen. Voeg de volgende code toe aan het einde van de 'spelOpbouwen' functie om de sterren te op de grond te laten vallen. 
