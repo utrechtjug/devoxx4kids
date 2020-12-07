@@ -1,0 +1,254 @@
+= Hoi
+:source-highlighter: rouge
+
+Leuk dat je meedoet met de Phaser workshop! Hieronder volgen de stappen die je moet doen om de game te maken.
+
+Je gaat het bestand 'game.html' aanpassen totdat de game werkt.
+
+Als je de code hebt aangepast doe dan het volgende om te testen of het werkt:
+
+- Cmd + s 	in de editor, om de wijzigingen op te slaan +
+- Cmd + r	in Chrome om de wijzigingen te laden
+
+Succes!
+
+
+== 1. Pas de functie 'spelOpbouwen' aan zodat hij er zo uitziet:
+
+[source,js]
+----
+function spelOpbouwen() {
+    // Hier voegen we de afbeelding 'achtergrond.png' toe als als achtergrond
+    this.add.image(400, 300, 'achtergrond'); 
+}
+----
+
+Je hebt nu de blauwe lucht gemaakt! Controleer met Cmd+s in de editor en Cmd +r in Chrome of het gelukt is.
+
+== 2. Platforms toevoegen
+
+Pas de variabele 'instellingen' aan zodat deze er zo uitziet:
+
+[source,js]
+----
+var instellingen = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+    },
+    scene: {
+        preload: spelLaden,
+        create: spelOpbouwen,
+        update: spelUpdaten
+    }
+};
+----
+
+Pas nu de 'spelOpbouwen' functie aan zodat hij er zo uitziet:
+[source,js]
+----
+function spelOpbouwen() {
+    //  Hier voegen we de afbeelding 'achtergrond.png' toe als als achtergrond
+    this.add.image(400, 300, 'achtergrond');
+
+    // Onze speler heeft grond nodig om op te lopen. Dat doen we hier
+    grond = this.physics.add.staticGroup();
+    grond.create(400, 568, 'platform').setScale(2).refreshBody();
+    grond.create(600, 400, 'platform');
+    grond.create(50, 250, 'platform');
+    grond.create(750, 220, 'platform');
+}
+----
+
+Nu heb je de platforms gemaakt, controleer weer of het gelukt is.
+
+
+== 3. Voeg het poppetje toe
+
+Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder grond.create(750, 220, 'platform');
+
+[source,js]
+----
+// En nu voegen we de speler toe.
+speler = this.physics.add.sprite(100, 450, 'speler');
+//  De speler mag uit het spel kunnen lopen!
+speler.setBounce(0.2);
+speler.setCollideWorldBounds(true);
+this.physics.add.collider(speler, grond);
+----
+
+Contoleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
+
+== 4. Laat het poppetje bewegen met de pijltjes op het toetsenbord
+Onze held kan nog niet zoveel ☹.  Plak de volgende code helemaal onderaan in de 'spelOpbouwen' functie, zodat het poppetje kan lopen.
+
+[source,js]
+----
+// Onze speler moet kunnen bewegen. Dat regelen we hier.
+this.anims.create({
+    key: 'left',
+    frames: this.anims.generateFrameNumbers('speler', { start: 0, end: 3 }),
+    frameRate: 10,
+    repeat: -1
+});
+
+this.anims.create({
+    key: 'turn',
+    frames: [ { key: 'speler', frame: 4 } ],
+    frameRate: 20
+});
+
+this.anims.create({
+    key: 'right',
+    frames: this.anims.generateFrameNumbers('speler', { start: 5, end: 8 }),
+    frameRate: 10,
+    repeat: -1
+});
+
+cursors = this.input.keyboard.createCursorKeys();
+----
+
+Om de pijltjes te laten werken, moeten we ook de spelUpdaten() functie aanpassen. Voeg de volgende code toe zodat deze functie er als volgt uit komt te zien:
+
+[source,js]
+----
+function spelUpdaten() {
+    if (gameOver) {
+        return;
+    }
+
+    if (cursors.left.isDown) {
+        speler.setVelocityX(-160);
+        speler.anims.play('left', true);
+    } else if (cursors.right.isDown) {
+        speler.setVelocityX(160);
+        speler.anims.play('right', true);
+    } else {
+        speler.setVelocityX(0);
+        speler.anims.play('turn');
+    }
+
+    if (cursors.up.isDown && speler.body.touching.down) {
+        speler.setVelocityY(-330);
+    }
+}
+----
+
+Controleer of het poppetje beweegt als je pijltjestoetsen gebruikt. En, kan die lopen en springen?
+
+== 5. Voeg de sterren toe
+Het poppetje moet natuurlijk wel iets te doen hebben in het spel. In dit spel gaan we sterren verzamelen waar we punten voor krijgen. 
+Plak de volgende code aan het onderaan de 'spelOpbouwen' functie:
+
+[source,js]
+----
+// We gaan sterren verzamelen. Hier worden de sterren toegevoegd aan het spel.
+// Misschien wil jij wel meer of minder sterren?
+sterren = this.physics.add.group({
+    key: 'ster',
+    repeat: 11,
+    setXY: { x: 12, y: 0, stepX: 70 }
+});
+
+sterren.children.iterate(function (child) {
+    //  we laten de sterren iets stuiteren
+    child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+});
+----
+
+Controleer of de sterren in  verschijnen als je opslaat en de browser ververst.
+
+== 6. Laat de sterren niet uit het scherm vallen
+Oh oh, wat gebeurde daar nou? De sterren blijven niet op de grond liggen. Voeg de volgende code toe aan het einde van de 'spelOpbouwen' functie om de sterren te op de grond te laten vallen. 
+
+[source,js]
+----
+this.physics.add.collider(sterren, grond);
+----
+
+Controleer of de sterren in beeld blijven als je opslaat en de browser ververst.
+
+== 7. Sterren oppakken
+Nu moet het poppetje de sterren nog kunnen verzamelen. 
+Voeg voor </script> de volgende functie toe:
+
+[source,js]
+----
+function sterPakken(speler, ster) {
+    ster.disableBody(true, true);
+}
+----
+
+en voeg onderaan de spelOpbouwen functie de volgende code toe:
+this.physics.add.overlap(speler, sterren, sterPakken, null, this);
+
+En? Kun je nu sterren oppakken?
+
+== 8. Toon de score
+We willen natuurlijk wel kunnen zien hoe goed we het doen. Daarom gaan we de score bijhouden. Voeg daarom onderstaande code toe onderaan in de 'spelOpbouwen' functie zodat de score op het scherm wordt getoond.
+
+[source,js]
+----
+// De score
+scoreTekst = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+----
+
+Als we een ster pakken, dan moet de score worden verhoogd. Voeg daarom de volgende code toe aan de ‘sterPakken’ functie zodat die er zo uit komt te zien:
+
+[source,js]
+----
+function sterPakken(speler, ster) {
+    ster.disableBody(true, true);
+    // We moeten de score bijwerken
+    score += 10;
+    scoreTekst.setText('Score: ' + score);
+}
+----
+Controleer of de score verandert als je een ster pakt.  Sla weer op en de browser ververst.
+
+== 9. Voeg de bommen toe
+Alleen maar sterren verzamelen is wel een beetje makkelijk. Laten we het wat spannender maken. Voeg onderstaande code toe aan het einde van de 'spelOpbouwen' functie zodat er bommen in het spel verschijnen:
+[source,js]
+----
+bommen = this.physics.add.group();
+this.physics.add.collider(bommen, grond);
+this.physics.add.collider(speler, bommen, bomRaken, null, this);
+----
+Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er meer bommen komen hoe verder je komt:
+[source,js]
+----
+// wat moet er gebeuren als alle sterren zijn verzameld?
+if (sterren.countActive(true) === 0) {
+    sterren.children.iterate(function (child) {
+        child.enableBody(true, child.x, 0, true, true);
+    });
+
+    var x = (speler.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+
+    var bom = bommen.create(x, 16, 'bom');
+    bom.setBounce(1);
+    bom.setCollideWorldBounds(true);
+    bom.setVelocity(Phaser.Math.Between(-200, 200), 20);
+    bom.allowGravity = false; 
+}
+----
+
+De laatste stap! Voeg onderstaande code toe als nieuwe functie, helemaal onderaan, net voor '</script>'. Als je een bom raakt, dan is het GAME OVER!
+[source,js]
+----
+function bomRaken(speler, bom) {
+    this.physics.pause();
+    speler.setTint(0xff0000);
+    speler.anims.play('turn');
+    gameOver = true;
+}
+----
+
+
+Je bent klaar. Gefeliciteerd met je eerste zelfgemaakt game!

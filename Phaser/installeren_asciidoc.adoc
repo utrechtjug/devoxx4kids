@@ -1,0 +1,38 @@
+= AsciiDoctor installeren en gebruiken, en algemene opmerkingen 
+Eric-Wubbo Lameijer
+v1.0, 2020-12-07
+:toc:
+:toc-title: Inhoud
+:imagesdir: ./asciidoc_images
+
+== 1. Installeren van AsciiDoc(tor)
+Om tekstfiles die een AsciiDoc formaat hebben in .html of .pdf files om te zetten is de software AsciiDoctor nodig. Deze kan het gemakkelijkst worden als een Ruby gem, maar daarvoor moet je wel eerst Ruby geinstalleerd hebben.
+Om de teksten uit deze directory mooi om te zetten in html en pdf moet je dus het volgende gedaan hebben:
+
+- download en installeer https://www.ruby-lang.org/en/downloads/[Ruby]
+- installeer het AsciiDoctor-gem (voor het omzetten van AsciiDoc-formaat in .html) `gem install asciidoctor`
+- installeer het AsciiDoctor-pdf-gem (voor het omzetten van AsciiDoc-formaat naar .pdf) `gem install asciidoctor-pdf`
+- installeer het Rouge-gem (voor het mooi kunnen kleuren van broncode) `gem install rouge` 
+
+== 2. Gebruiken van AsciiDoctor 
+
+Een AsciiDoc-file heeft een .adoc extensie. +
+Omzetten van AsciiDoc naar html: `asciidoctor mijn_file.adoc` +
+Omzetten van AsciiDoc naar pdf: `asciidoctor-pdf mijn_file.adoc`
+
+== 3. Opmerkingen: waarom AsciiDoc in plaats van Markdown, LaTeX of een tekstverwerkersformaat (.doc/.odt)
+
+Markdown is op dit moment (eind 2020) de populairste markup-taal op het web en kan door heel veel pakketten gelezen worden. Het enige probleem is dat de markdown-notatie nogal basaal is - je kunt er eenvoudige documentatie mee maken met schuine tekst en headers, maar veel meer kan het niet. Met AsciiDoc(hieronder, rechts) krijg je een veel mooier en duidelijker resultaat dan met standaard Markdown (hieronder, links). 
+[.float-group]
+--
+[.left]
+image::markdown_example.jpg[Markdown,400,400]
+[.left]
+image::asciidoc_example.jpg[AsciiDoc,400,400]
+--
+
+Als je iets mooi wilt maken met markdown moet je een van de vele Markdown-dialecten gebruiken, maar dan verlies je het grootste voordeel van Markdown, de compatibiliteit! En AsciiDoc is op zich ook redelijk goed compatibel/wijdverspreid, github kan er ook mee omgaan.
+
+LaTeX en de meeste andere markup-formaten zijn vaak weer veel ingewikkelder dan AsciiDoc om te leren en toe te passen, en zijn dus 'overkill' voor redelijk kleine documenten als deze. Een tekstverwerkersformaat zorgt er weer voor dat veranderingen lastig te zien zijn; normaal is het handiger documentatie te kunnen aanpassen en die wijzigingen te zien via git dan via allemaal opmerkingen in de kantlijnen van tekstverwerkers, als mensen onthouden de juiste opties voor revisies en commentaren aan te zetten!
+
+
