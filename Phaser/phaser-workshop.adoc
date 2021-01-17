@@ -233,6 +233,8 @@ function sterPakken(speler, ster) {
 ----
 Controleer of de score verandert als je een ster pakt. Sla de code weer op en ververs de browser.
 
+Als je 10 punten per ster te veel (of juist te weinig) vindt, kun je het aantal punten per ster eenvoudig aanpassen. Kijk maar eens of het je lukt.
+
 == 9. Voeg de bommen toe
 Alleen maar sterren verzamelen is wel een beetje makkelijk. Laten we het wat spannender maken. Voeg onderstaande code toe aan het einde van de 'spelOpbouwen' functie zodat er bommen in het spel verschijnen:
 [source,js]
@@ -246,10 +248,13 @@ Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er me
 ----
 // wat moet er gebeuren als alle sterren zijn verzameld?
 if (sterren.countActive(true) === 0) {
+
+    // Zet alle sterren weer aan
     sterren.children.iterate(function (child) {
         child.enableBody(true, child.x, 0, true, true);
     });
 
+    // Zorg dat een bom verschijnt aan de andere kant van het speelveld
     var x = (speler.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
     var bom = bommen.create(x, 16, 'bom');
