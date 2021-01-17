@@ -65,7 +65,10 @@ function spelOpbouwen() {
 
     // Onze speler heeft grond nodig om op te lopen. Dat doen we hier
     grond = this.physics.add.staticGroup();
-    grond.create(400, 568, 'platform').setScale(2).refreshBody();
+    // De grond is 2x zo groot als een normaal platform
+    grond.create(400, 568, 'platform').setScale(2).refreshBody(); 
+
+    // We maken nog een aantal losse platforms
     grond.create(600, 400, 'platform');
     grond.create(50, 250, 'platform');
     grond.create(750, 220, 'platform');
@@ -73,23 +76,24 @@ function spelOpbouwen() {
 ----
 
 Nu heb je de platforms gemaakt, controleer weer of het gelukt is.
+Als je het leuk vindt, kun je kijken wat er gebeurt als je de getallen bij de platforms aan past. Ook kun je nog een extra platform toevoegen als je wilt.
 
 
 == 3. Voeg het poppetje toe
 
-Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder grond.create(750, 220, 'platform');
+Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder `grond.create(750, 220, 'platform');`
 
 [source,js]
 ----
 // En nu voegen we de speler toe.
 speler = this.physics.add.sprite(100, 450, 'speler');
-// De speler mag uit het spel kunnen lopen!
+// De speler mag niet uit het spel kunnen lopen!
 speler.setBounce(0.2);
 speler.setCollideWorldBounds(true);
 this.physics.add.collider(speler, grond);
 ----
 
-Contoleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
+Conrtoleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
 
 == 4. Laat het poppetje bewegen met de pijltjes op het toetsenbord
 Onze held kan nog niet zoveel ☹.  Plak de volgende code helemaal onderaan in de 'spelOpbouwen' functie, zodat het poppetje kan lopen.
@@ -130,12 +134,15 @@ function spelUpdaten() {
     }
 
     if (cursors.left.isDown) {
+        // Maak de horizontale snelheid van de speler 160 naar links
         speler.setVelocityX(-160);
         speler.anims.play('naar_links', true);
     } else if (cursors.right.isDown) {
+        // Maak de horizontale snelheid van de speler 160 naar rechts
         speler.setVelocityX(160);
         speler.anims.play('naar_rechts', true);
     } else {
+        // Maak de horizontale snelheid van de speler 0 (staat dus stil)
         speler.setVelocityX(0);
         speler.anims.play('keer_om');
     }
@@ -148,13 +155,15 @@ function spelUpdaten() {
 
 Controleer of het poppetje beweegt als je pijltjestoetsen gebruikt. En, kan het lopen en springen?
 
+Ook leuk om te proberen: kijk eens of je door in de code iets aan te passen het poppetje sneller of langzamer te laten bewegen.
+
 == 5. Voeg de sterren toe
 Het poppetje moet natuurlijk wel iets te doen hebben in het spel. In dit spel gaan we sterren verzamelen waar we punten voor krijgen. 
 Plak de volgende code onderaan de 'spelOpbouwen' functie:
 
 [source,js]
 ----
-// We gaan sterren verzamelen. Hier worden de sterren toegevoegd aan het spel.
+// We gaan sterren verzamelen. Hier worden 11 sterren toegevoegd aan het spel.
 // Misschien wil jij wel meer of minder sterren?
 sterren = this.physics.add.group({
     key: 'ster',
@@ -169,6 +178,8 @@ sterren.children.iterate(function (child) {
 ----
 
 Controleer of de sterren in het beeld verschijnen als je de code opslaat en de browser ververst.
+
+Probeer ook eens on meer of minder sterren in het spel te hebben. Zie je al wat je aan moet passen?
 
 == 6. Laat de sterren niet uit het scherm vallen
 Oh oh, wat gebeurde daar nou? De sterren blijven niet op de grond liggen. Voeg de volgende code toe aan het einde van de 'spelOpbouwen' functie om de sterren te op de grond te laten vallen. 
