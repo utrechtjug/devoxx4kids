@@ -93,7 +93,7 @@ speler.setCollideWorldBounds(true);
 this.physics.add.collider(speler, grond);
 ----
 
-Conrtoleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
+Controleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
 
 == 4. Laat het poppetje bewegen met de pijltjes op het toetsenbord
 Onze held kan nog niet zoveel ☹.  Plak de volgende code helemaal onderaan in de 'spelOpbouwen' functie, zodat het poppetje kan lopen.
