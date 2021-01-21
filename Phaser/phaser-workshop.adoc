@@ -76,19 +76,19 @@ function spelOpbouwen() {
 ----
 
 Nu heb je de platforms gemaakt, controleer weer of het gelukt is.
-Als je het leuk vindt, kun je kijken wat er gebeurt als je de getallen bij de platforms aan past. Ook kun je nog een extra platform toevoegen als je wilt.
+Als je het leuk vindt, kun je kijken wat er gebeurt als je de getallen bij de platforms aanpast. Ook kun je nog een extra platform toevoegen als je wilt.
 
 
 == 3. Voeg het poppetje toe
 
-Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder `terreinGroep.create(750, 220, 'platform');`
+Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op, er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder `terreinGroep.create(750, 220, 'platform');`
 
 [source,js]
 ----
 // En nu voegen we de speler toe.
 speler = this.physics.add.sprite(100, 450, 'speler');
-// De speler mag niet uit het spel kunnen lopen!
 speler.setBounce(0.2);
+// De speler mag niet uit het spel kunnen lopen!
 speler.setCollideWorldBounds(true);
 this.physics.add.collider(speler, terreinGroep);
 ----
