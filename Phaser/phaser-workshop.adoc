@@ -142,7 +142,7 @@ function spelUpdaten() {
         speler.setVelocityX(160);
         speler.anims.play('naar_rechts', true);
     } else {
-        // Maak de horizontale snelheid van de speler 0 (staat dus stil)
+        // Maak de horizontale snelheid van de speler 0
         speler.setVelocityX(0);
         speler.anims.play('keer_om');
     }
@@ -249,7 +249,7 @@ Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er me
 // wat moet er gebeuren als alle sterren zijn verzameld?
 if (sterren.countActive(true) === 0) {
 
-    // Zet alle sterren weer aan
+    // Zorg dat er weer sterren zijn
     sterren.children.iterate(function (child) {
         child.enableBody(true, child.x, 0, true, true);
     });
