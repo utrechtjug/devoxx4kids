@@ -64,14 +64,14 @@ function spelOpbouwen() {
     this.add.image(400, 300, 'achtergrond');
 
     // Onze speler heeft grond nodig om op te lopen. Dat doen we hier
-    grond = this.physics.add.staticGroup();
+    terreinGroep = this.physics.add.staticGroup();
     // De grond is 2x zo groot als een normaal platform
-    grond.create(400, 568, 'platform').setScale(2).refreshBody(); 
+    terreinGroep.create(400, 568, 'platform').setScale(2).refreshBody();
 
     // We maken nog een aantal losse platforms
-    grond.create(600, 400, 'platform');
-    grond.create(50, 250, 'platform');
-    grond.create(750, 220, 'platform');
+    terreinGroep.create(600, 400, 'platform');
+    terreinGroep.create(50, 250, 'platform');
+    terreinGroep.create(750, 220, 'platform');
 }
 ----
 
@@ -81,7 +81,7 @@ Als je het leuk vindt, kun je kijken wat er gebeurt als je de getallen bij de pl
 
 == 3. Voeg het poppetje toe
 
-Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder `grond.create(750, 220, 'platform');`
+Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder `terreinGroep.create(750, 220, 'platform');`
 
 [source,js]
 ----
@@ -90,7 +90,7 @@ speler = this.physics.add.sprite(100, 450, 'speler');
 // De speler mag niet uit het spel kunnen lopen!
 speler.setBounce(0.2);
 speler.setCollideWorldBounds(true);
-this.physics.add.collider(speler, grond);
+this.physics.add.collider(speler, terreinGroep);
 ----
 
 Controleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
@@ -186,7 +186,7 @@ Oh oh, wat gebeurde daar nou? De sterren blijven niet op de grond liggen. Voeg d
 
 [source,js]
 ----
-this.physics.add.collider(sterren, grond);
+this.physics.add.collider(sterren, terreinGroep);
 ----
 
 Controleer of de sterren in beeld blijven als je opslaat en de browser ververst.
@@ -240,7 +240,7 @@ Alleen maar sterren verzamelen is wel een beetje makkelijk. Laten we het wat spa
 [source,js]
 ----
 bommen = this.physics.add.group();
-this.physics.add.collider(bommen, grond);
+this.physics.add.collider(bommen, terreinGroep);
 this.physics.add.collider(speler, bommen, bomRaken, null, this);
 ----
 Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er meer bommen komen hoe verder je komt:
