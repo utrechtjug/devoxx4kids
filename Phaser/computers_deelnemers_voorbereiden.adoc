@@ -1,8 +1,8 @@
 = Computers deelnemers voorbereiden
 
-. Installeer de phaser-3 folder op de computer, oftewel door kopiëren van een USB-stick, of met een git clone van het https://github.com/utrechtjug/devoxx4kids[Utrecht JUG devoxx4kids repository].
+. Installeer de 'phaser3-workshop'-folder op de computer, oftewel door kopiëren van een USB-stick, of met een git clone van het https://github.com/utrechtjug/devoxx4kids[Utrecht JUG devoxx4kids repository].
 
-. Ga naar de phaser-3 folder.
+. Ga naar de 'phaser3-workshop'-folder.
 
 . Run een server (zorg dat python geinstalleerd is, anders download het van de https://www.python.org/downloads/[python-site]), run de server met `python -m http.server`.
 
@@ -12,4 +12,4 @@
 
 . Start de code-editor (zorg dat er een geïnstalleerd is, bijvoorbeeld Visual Studio Code  https://code.visualstudio.com/[(download)] ).
 
-. In de editor, open de game.html file in de phaser-3 folder.
+. In de editor, open de 'gamecode.js'-file in de 'phaser3-workshop'-folder.
