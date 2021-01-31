@@ -4,7 +4,7 @@
 
 Leuk dat je meedoet met de Phaser workshop! Hieronder volgen de stappen die je moet doen om de game te maken.
 
-Je gaat het bestand 'game.html' aanpassen totdat de game werkt.
+Je gaat het bestand 'gamecode.js' aanpassen totdat de game werkt.
 
 Als je de code hebt aangepast doe dan het volgende om te testen of het werkt:
 
