@@ -6,9 +6,9 @@
 
 . Run een server (zorg dat python geinstalleerd is, anders download het van de https://www.python.org/downloads/[python-site]), run de server met `python -m http.server`.
 
-. Laad Chrome of een andere browser.
+. Start Chrome of een andere browser.
 
-. Ga met de browser naar http://127.0.0.1:8000/game.html .
+. Ga met de browser naar http://127.0.0.1:8000/game.html (open de file NIET met een webbrowser, dan krijg je CORS-errors).
 
 . Start de code-editor (zorg dat er een geïnstalleerd is, bijvoorbeeld Visual Studio Code  https://code.visualstudio.com/[(download)] ).
 
