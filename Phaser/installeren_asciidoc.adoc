@@ -1,24 +1,35 @@
 = AsciiDoctor installeren en gebruiken, en algemene opmerkingen 
-Eric-Wubbo Lameijer
-v1.0, 2020-12-07
 :toc:
 :toc-title: Inhoud
 :imagesdir: ./asciidoc_images
 
-== 1. Installeren van AsciiDoc(tor)
-Om tekstfiles die een AsciiDoc formaat hebben in .html of .pdf files om te zetten is de software AsciiDoctor nodig. Deze kan het gemakkelijkst worden gedownload als een Ruby gem, maar daarvoor moet je wel eerst Ruby geïnstalleerd hebben.
-Om de teksten uit deze directory mooi om te zetten in html en pdf moet je dus het volgende gedaan hebben:
+== 0. Voorwaarden 
+* sdkman is geinstalleerd ( https://sdkman.io/)
 
-- download en installeer https://www.ruby-lang.org/en/downloads/[Ruby]
-- installeer het AsciiDoctor-gem (voor het omzetten van AsciiDoc-formaat in .html) `gem install asciidoctor`
-- installeer het AsciiDoctor-pdf-gem (voor het omzetten van AsciiDoc-formaat naar .pdf) `gem install asciidoctor-pdf`
-- installeer het Rouge-gem (voor het mooi kunnen kleuren van broncode) `gem install rouge` 
+== 1. Installeren van AsciiDoc(tor) en extensie
+
+Als maven nog niet is ge&iuml;nstalleerd:
+----
+sdk install maven
+----
+
+Installeer Asciidoctor:
+----
+sdk install asciidoctorj
+----
+
+Installeer extensie om code blocks makkelijk te kopi&euml;ren:
+----
+mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get -Dartifact=com.puravida-software.asciidoctor:asciidoctor-extensions:3.0.0 -DrepoUrl=https://central.sonatype.com/
+----
 
 == 2. Gebruiken van AsciiDoctor 
 
-Een AsciiDoc-file heeft een .adoc extensie. +
-Omzetten van AsciiDoc naar html: `asciidoctor mijn_file.adoc` +
-Omzetten van AsciiDoc naar pdf: `asciidoctor-pdf mijn_file.adoc`
+Omzetten van AsciiDoc naar html: `asciidoctor mijn_file.adoc`:
+
+----
+asciidoctorj -cp ~/.m2/repository/com/puravida-software/asciidoctor/asciidoctor-extensions/3.0.0/asciidoctor-extensions-3.0.0.jar phaser-workshop.adoc
+----
 
 == 3. Opmerkingen: waarom AsciiDoc in plaats van Markdown, LaTeX of een tekstverwerkersformaat (.doc/.odt)
 

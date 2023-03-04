@@ -21,7 +21,7 @@ Succes!
 
 == 1. Pas de functie 'spelOpbouwen' aan zodat hij er zo uitziet:
 
-[source,js]
+[#achtergrond,source,js]
 ----
 function spelOpbouwen() {
     // Hier voegen we de afbeelding 'achtergrond.png' toe als als achtergrond
@@ -35,7 +35,7 @@ Je hebt nu de blauwe lucht gemaakt! Controleer met Ctrl + s in de editor en F5 (
 
 Pas de variabele 'instellingen' aan zodat deze er zo uitziet (voeg het stuk na 'physics:' toe):
 
-[source,js]
+[#instellingen,source,js]
 ----
 var instellingen = {
     type: Phaser.AUTO,
@@ -57,7 +57,7 @@ var instellingen = {
 ----
 
 Pas nu de 'spelOpbouwen' functie aan zodat hij er zo uitziet:
-[source,js]
+[#terreingroep,source,js]
 ----
 function spelOpbouwen() {
     // Hier voegen we de afbeelding 'achtergrond.png' toe als als achtergrond
@@ -83,7 +83,7 @@ Als je het leuk vindt, kun je kijken wat er gebeurt als je de getallen bij de pl
 
 Voeg het volgende blok code to aan de 'spelOpbouwen' functie. Let op, er staat al code in deze functie, voeg onderstaande toe aan wat er al staat. Dus direct onder `terreinGroep.create(750, 220, 'platform');`
 
-[source,js]
+[#add-speler,source,js]
 ----
 // En nu voegen we de speler toe.
 speler = this.physics.add.sprite(100, 450, 'speler');
@@ -98,7 +98,7 @@ Controleer of het poppetje verschijnt als je de code opslaat en de browser verve
 == 4. Laat het poppetje bewegen met de pijltjes op het toetsenbord
 Onze held kan nog niet zoveel ☹.  Plak de volgende code helemaal onderaan in de 'spelOpbouwen' functie, zodat het poppetje kan lopen.
 
-[source,js]
+[#beweeg-speler,source,js]
 ----
 // Onze speler moet kunnen bewegen. Dat regelen we hier.
 this.anims.create({
@@ -126,7 +126,7 @@ cursors = this.input.keyboard.createCursorKeys();
 
 Om de pijltjes te laten werken, moeten we ook de spelUpdaten() functie aanpassen. Voeg de volgende code toe zodat deze functie er als volgt uit komt te zien:
 
-[source,js]
+[#speler-velocity,source,js]
 ----
 function spelUpdaten() {
     if (gameOver) {
@@ -161,7 +161,7 @@ Ook leuk om te proberen: kijk eens of je door in de code iets aan te passen het 
 Het poppetje moet natuurlijk wel iets te doen hebben in het spel. In dit spel gaan we sterren verzamelen waar we punten voor krijgen. 
 Plak de volgende code onderaan de 'spelOpbouwen' functie:
 
-[source,js]
+[#sterren,source,js]
 ----
 // We gaan sterren verzamelen. Hier worden 11 sterren toegevoegd aan het spel.
 // Misschien wil jij wel meer of minder sterren?
@@ -184,7 +184,7 @@ Probeer ook eens on meer of minder sterren in het spel te hebben. Zie je al wat 
 == 6. Laat de sterren niet uit het scherm vallen
 Oh oh, wat gebeurde daar nou? De sterren blijven niet op de grond liggen. Voeg de volgende code toe aan het einde van de 'spelOpbouwen' functie om de sterren te op de grond te laten vallen. 
 
-[source,js]
+[#sterren-grond,source,js]
 ----
 this.physics.add.collider(sterren, terreinGroep);
 ----
@@ -195,7 +195,7 @@ Controleer of de sterren in beeld blijven als je opslaat en de browser ververst.
 Nu moet het poppetje de sterren nog kunnen verzamelen. 
 Voeg voor </script> de volgende functie toe:
 
-[source,js]
+[#sterren-pakken,source,js]
 ----
 function sterPakken(speler, ster) {
     ster.disableBody(true, true);
@@ -204,7 +204,7 @@ function sterPakken(speler, ster) {
 
 en voeg onderaan de spelOpbouwen functie de volgende code toe:
 
-[source,js]
+[#sterren-pakken2,source,js]
 ----
 this.physics.add.overlap(speler, sterren, sterPakken, null, this);
 ----
@@ -214,7 +214,7 @@ En? Kun je nu sterren oppakken?
 == 8. Toon de score
 We willen natuurlijk wel kunnen zien hoe goed we het doen. Daarom gaan we de score bijhouden. Voeg daarom onderstaande code toe onderaan in de 'spelOpbouwen' functie zodat de score op het scherm wordt getoond.
 
-[source,js]
+[#toon-score,source,js]
 ----
 // De score
 scoreTekst = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -222,7 +222,7 @@ scoreTekst = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' 
 
 Als we een ster pakken, dan moet de score worden verhoogd. Voeg daarom de volgende code toe aan de ‘sterPakken’ functie zodat die er zo uit komt te zien:
 
-[source,js]
+[#toon-score2,source,js]
 ----
 function sterPakken(speler, ster) {
     ster.disableBody(true, true);
@@ -237,14 +237,14 @@ Als je 10 punten per ster te veel (of juist te weinig) vindt, kun je het aantal 
 
 == 9. Voeg de bommen toe
 Alleen maar sterren verzamelen is wel een beetje makkelijk. Laten we het wat spannender maken. Voeg onderstaande code toe aan het einde van de 'spelOpbouwen' functie zodat er bommen in het spel verschijnen:
-[source,js]
+[#add-bommen,source,js]
 ----
 bommen = this.physics.add.group();
 this.physics.add.collider(bommen, terreinGroep);
 this.physics.add.collider(speler, bommen, bomRaken, null, this);
 ----
 Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er meer bommen komen hoe verder je komt:
-[source,js]
+[#add-bommen2,source,js]
 ----
 // wat moet er gebeuren als alle sterren zijn verzameld?
 if (sterren.countActive(true) === 0) {
@@ -266,7 +266,7 @@ if (sterren.countActive(true) === 0) {
 ----
 
 De laatste stap! Voeg onderstaande code toe als nieuwe functie, helemaal onderaan, net voor '</script>'. Als je een bom raakt, dan is het GAME OVER!
-[source,js]
+[#add-game-over,source,js]
 ----
 function bomRaken(speler, bom) {
     this.physics.pause();
