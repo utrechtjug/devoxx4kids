@@ -7,9 +7,10 @@ Leuk dat je meedoet met de Phaser workshop! Hieronder volgen de stappen die je m
 Je gaat het bestand 'gamecode.js' aanpassen totdat de game werkt.
 
 Controleer eerst:
-1) Dat er een windowtje is waarin een server wordt gerund (anders moet iemand een window openen en daarin naar de directory van phaser3-workshop gaan en daarin `python -m http.server` typen.
-2) Dat er een webbrowser zoals Chrome openstaat, en dat die op localhost:8000/game.html staat (deze handleiding kan in een andere tab)
-3) Dat je Visual Studio code open hebt staan, met daarin game.js
+
+ . Dat er een windowtje is waarin een server wordt gerund (anders moet iemand een window openen en daarin naar de directory van phaser3-workshop gaan en daarin `python -m http.server` typen.
+ . Dat er een webbrowser zoals Chrome openstaat, en dat die op localhost:8000/game.html staat (deze handleiding kan in een andere tab)
+ . Dat je Visual Studio code open hebt staan, met daarin game.js
 
 Als je de code hebt aangepast doe dan het volgende om te testen of het werkt:
 
