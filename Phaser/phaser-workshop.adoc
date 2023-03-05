@@ -6,6 +6,11 @@ Leuk dat je meedoet met de Phaser workshop! Hieronder volgen de stappen die je m
 
 Je gaat het bestand 'gamecode.js' aanpassen totdat de game werkt.
 
+Controleer eerst:
+1) Dat er een windowtje is waarin een server wordt gerund (anders moet iemand een window openen en daarin naar de directory van phaser3-workshop gaan en daarin `python -m http.server` typen.
+2) Dat er een webbrowser zoals Chrome openstaat, en dat die op localhost:8000/game.html staat (deze handleiding kan in een andere tab)
+3) Dat je Visual Studio code open hebt staan, met daarin game.js
+
 Als je de code hebt aangepast doe dan het volgende om te testen of het werkt:
 
 [horizontal]
@@ -163,7 +168,7 @@ Plak de volgende code onderaan de 'spelOpbouwen' functie:
 
 [source,js]
 ----
-// We gaan sterren verzamelen. Hier worden 11 sterren toegevoegd aan het spel.
+// We gaan sterren verzamelen. Hier worden 12 sterren toegevoegd aan het spel.
 // Misschien wil jij wel meer of minder sterren?
 sterren = this.physics.add.group({
     key: 'ster',
@@ -265,7 +270,7 @@ if (sterren.countActive(true) === 0) {
 }
 ----
 
-De laatste stap! Voeg onderstaande code toe als nieuwe functie, helemaal onderaan, net voor '</script>'. Als je een bom raakt, dan is het GAME OVER!
+De laatste stap! Voeg onderstaande code toe als nieuwe functie, helemaal onderaan. Als je een bom raakt, dan is het GAME OVER!
 [source,js]
 ----
 function bomRaken(speler, bom) {
