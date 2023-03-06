@@ -9,7 +9,7 @@ Je gaat het bestand 'gamecode.js' aanpassen totdat de game werkt.
 Als je de code hebt aangepast doe dan het volgende om te testen of het werkt:
 
 [horizontal]
-Ctrl + s:: in de editor, om de wijzigingen op te slaan +
+Ctrl + s:: in de editor, om de wijzigingen op te slaan + In de editor heeft de tab een bolletje als het document is gewijzigd maar niet gesaved, maar een kruisje als het bestand wel is gesaved.
 F5 (of Ctrl + r):: in Chrome om de wijzigingen te laden
 
 In Visual Studio Code (de editor) is het volgende handig:
@@ -193,7 +193,7 @@ Controleer of de sterren in beeld blijven als je opslaat en de browser ververst.
 
 == 7. Sterren oppakken
 Nu moet het poppetje de sterren nog kunnen verzamelen. 
-Voeg voor </script> de volgende functie toe:
+Voeg onderaan het document de volgende functie toe:
 
 [#sterren-pakken,source,js]
 ----
@@ -202,7 +202,7 @@ function sterPakken(speler, ster) {
 }
 ----
 
-en voeg onderaan de spelOpbouwen functie de volgende code toe:
+en voeg onderaan in de functie spelOpbouwen de volgende code toe:
 
 [#sterren-pakken2,source,js]
 ----
@@ -265,7 +265,7 @@ if (sterren.countActive(true) === 0) {
 }
 ----
 
-De laatste stap! Voeg onderstaande code toe als nieuwe functie, helemaal onderaan, net voor '</script>'. Als je een bom raakt, dan is het GAME OVER!
+De laatste stap! Voeg onderstaande code toe als nieuwe functie, helemaal onderaan. Als je een bom raakt, dan is het GAME OVER!
 [#add-game-over,source,js]
 ----
 function bomRaken(speler, bom) {
