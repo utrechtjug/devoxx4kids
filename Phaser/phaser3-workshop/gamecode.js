@@ -29,12 +29,12 @@ function spelLaden() {
     this.load.image('ster', 'afbeeldingen/ster.png');
     this.load.image('bom', 'afbeeldingen/bom.png');
     this.load.spritesheet('speler', 'afbeeldingen/speler.png', { frameWidth: 32, frameHeight: 48 });
-}
+} // einde functie 'spelLaden'
 
 function spelOpbouwen() {
 
-}
+} // einde functie 'spelOpbouwen'
 
 function spelUpdaten() {
 
-}
+} // einde functie 'spelUpdaten'
