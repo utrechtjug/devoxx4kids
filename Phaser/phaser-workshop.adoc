@@ -6,17 +6,11 @@ Leuk dat je meedoet met de Phaser workshop! Hieronder volgen de stappen die je m
 
 Je gaat het bestand 'gamecode.js' aanpassen totdat de game werkt.
 
-Controleer eerst:
-
- . Dat er een windowtje is waarin een server wordt gerund (anders moet iemand een window openen en daarin naar de directory van phaser3-workshop gaan en daarin `python -m http.server` typen.
- . Dat er een webbrowser zoals Chrome openstaat, en dat die op localhost:8000/game.html staat (deze handleiding kan in een andere tab)
- . Dat je Visual Studio code open hebt staan, met daarin game.js
-
 Als je de code hebt aangepast, doe dan het volgende om te testen of het werkt:
 
 [horizontal]
 Ctrl + s:: in de editor, om de wijzigingen op te slaan +
-F5 (of Ctrl + r):: in Chrome om de wijzigingen te laden
+Ctrl + F5 (of Ctrl + r):: in Chrome om de wijzigingen te laden
 
 In Visual Studio Code (de editor) is het volgende handig:
 [horizontal]
@@ -39,30 +33,7 @@ Je hebt nu de blauwe lucht gemaakt! Controleer met Ctrl + s in de editor en F5 (
 
 == 2. Platforms toevoegen
 
-Pas de variabele 'instellingen' aan zodat deze er zo uitziet (voeg het stuk na 'physics:' toe):
-
-[source,js]
-----
-var instellingen = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 300 },
-            debug: false
-        }
-    },
-    scene: {
-        preload: spelLaden,
-        create: spelOpbouwen,
-        update: spelUpdaten
-    }
-};
-----
-
-Pas nu de 'spelOpbouwen' functie aan zodat hij er zo uitziet:
+Pas de 'spelOpbouwen' functie aan zodat hij er zo uitziet:
 [source,js]
 ----
 function spelOpbouwen() {
@@ -102,7 +73,7 @@ this.physics.add.collider(speler, terreinGroep);
 Controleer of het poppetje verschijnt als je de code opslaat en de browser ververst.
 
 == 4. Laat het poppetje bewegen met de pijltjes op het toetsenbord
-Onze held kan nog niet zoveel ☹.  Plak de volgende code helemaal onderaan in de 'spelOpbouwen' functie, zodat het poppetje kan lopen.
+Onze held kan nog niet zoveel ☹. Plak de volgende code helemaal onderaan in de 'spelOpbouwen' functie, zodat het poppetje kan lopen.
 
 [source,js]
 ----
@@ -199,7 +170,7 @@ Controleer of de sterren in beeld blijven als je opslaat en de browser ververst.
 
 == 7. Sterren oppakken
 Nu moet het poppetje de sterren nog kunnen verzamelen. 
-Voeg voor </script> de volgende functie toe:
+Voeg voor aan het eind van de code de volgende functie toe:
 
 [source,js]
 ----

@@ -3,7 +3,11 @@ var instellingen = {
     width: 800,
     height: 600,
     physics: {
-
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
     },
     scene: {
         preload: spelLaden,
