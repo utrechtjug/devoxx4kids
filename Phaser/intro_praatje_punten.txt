@@ -1,0 +1,10 @@
+1. Welkom allemaal bij de workshop Phaser
+
+2. Jullie gaan bij deze workshop een game maken! Deze game speel je in de browser Chrome.
+
+3. Demo eindresultaat
+
+4. We gaan programmeren in de taal Javascript. Javascript is een taal die momenteel veel gebruikt wordt en deze kan de browser begrijpen.
+
+5. Tools. 
+We gaan gebruik maken van de browser Chrome. De code gaan we typen in VS Code.
