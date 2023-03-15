@@ -277,4 +277,27 @@ function bomRaken(speler, bom) {
 ----
 
 
-Je bent klaar. Gefeliciteerd met je eerste zelfgemaakt game!
+*_Je bent klaar. Gefeliciteerd met je eerste zelfgemaakt game!_*
+
+Als je nog tijd en zin over hebt, kijk dan naar de volgende extra opdrachten
+
+== 10. Extra opdrachten
+
+Kies zelf een leuke opdracht uit.
+
+=== Gamen
+
+Speel je eigen spel, probeer 500 punten te halen. Wissel met je teamgenoot zodra je het hebt gehaald.
+
+=== Een goede start
+
+Kun jij uitvinden hoe je kunt instellen dat het poppetje ergens anders start?
+Laat het poppetje eens op het linkerbovenplatform beginnen.
+
+=== Zwaartekracht
+
+Weet jij hoe je je poppetje 2 keer zo hoog laten springen? Probeer het in te stellen in de code.
+
+=== Bommen++
+
+Maak de bommen krachtiger of zorg dat er meer bommen zijn om het lastiger te maken voor de speler.
