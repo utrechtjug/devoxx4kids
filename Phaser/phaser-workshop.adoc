@@ -170,7 +170,7 @@ Controleer of de sterren in beeld blijven als je opslaat en de browser ververst.
 
 == 7. Sterren oppakken
 Nu moet het poppetje de sterren nog kunnen verzamelen. 
-Voeg voor aan het eind van de code de volgende functie toe:
+Voeg aan het eind van de code de volgende functie toe:
 
 [source,js]
 ----
