@@ -10,7 +10,7 @@ Als je de code hebt aangepast, doe dan het volgende om te testen of het werkt:
 
 [horizontal]
 Ctrl + s:: in de editor, om de wijzigingen op te slaan +
-Ctrl + F5 (of Ctrl + r):: in Chrome om de wijzigingen te laden
+Ctrl + F5 (of Ctrl + r):: in de browser om de wijzigingen te laden
 
 In Visual Studio Code (de editor) is het volgende handig:
 [horizontal]
@@ -29,7 +29,7 @@ function spelOpbouwen() {
 }
 ----
 
-Je hebt nu de blauwe lucht gemaakt! Controleer met Ctrl + s in de editor en F5 (or Ctrl + r) in Chrome of het gelukt is.
+Je hebt nu de blauwe lucht gemaakt! Controleer met Ctrl + s in de editor en F5 (or Ctrl + r) in de browser of het gelukt is.
 
 == 2. Platforms toevoegen
 
@@ -220,6 +220,8 @@ bommen = this.physics.add.group();
 this.physics.add.collider(bommen, terreinGroep);
 this.physics.add.collider(speler, bommen, bomRaken, null, this);
 ----
+Het poppetje kan nu even niet bewegen, dit lossen we later op.
+
 Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er meer bommen komen hoe verder je komt:
 [#add-bommen2,source,js]
 ----
