@@ -2,7 +2,7 @@
 This workshop was created with asciidoctor. 
 
 ## Open the workshop
-If you want to see the content of this workshop, open the `microbit.html` file in a browser of your choice.
+If you want to see the content of this workshop, open the `microbit.html` file in this repository or click [here](https://utrechtjug.github.io/devoxx4kids/microbit.html)
 
 ## Build from source
 You can find the source in the `microbit.adoc` file.
