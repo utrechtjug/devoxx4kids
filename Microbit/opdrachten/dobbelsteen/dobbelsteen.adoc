@@ -1,0 +1,62 @@
+== Bouw een digitale dobbelsteen
+
+In deze opdracht gaan we van de Microbit een dobbelsteen maken. Als je er allebei klaar voor bent kun je het filmpje starten.
+
+=== Filmpje
+video::pY1bqTaSaJM[youtube,options="modest",width=640,height=480]
+
+=== Zelf doen
+
+. Ga naar http://makecode.microbit.org/[MakeCode]
+. Klik op 'Nieuw project' om een nieuw project te openen en geef het een naam, bijvoorbeeld 'digitale dobbelsteen'.
+. Volg de instructies uit de video en maak het programma na in je nieuwe project.
+
+Tip: mocht het te snel gaan, zet de video dan even op pauze of open onderstaande screenshots!
+
+.Screenshots
+[%collapsible]
+====
+.Stap 1
+image::opdrachten/dobbelsteen/stap1.png[]
+.Stap 2
+image::opdrachten/dobbelsteen/stap2.png[]
+.Stap 3
+image::opdrachten/dobbelsteen/stap3.png[]
+.Stap 4
+image::opdrachten/dobbelsteen/stap4.png[]
+.Stap 5
+image::opdrachten/dobbelsteen/stap5.png[]
+.Stap 6
+image::opdrachten/dobbelsteen/stap6.png[]
+.Stap 7
+image::opdrachten/dobbelsteen/stap7.png[]
+.Stap 8
+image::opdrachten/dobbelsteen/stap8.png[]
+.Stap 9
+image::opdrachten/dobbelsteen/stap9.png[]
+.Stap 10
+image::opdrachten/dobbelsteen/stap10.png[]
+.Stap 11
+image::opdrachten/dobbelsteen/stap11.png[]
+====
+
+.Extra opdracht
+[%collapsible]
+====
+Doel van deze extra opdracht is het maken van een valsspeel dobbelsteen.
+
+Regels:
+
+. Als je op de A knop drukt en daarna de microbit schud, dan gooit de dobbelsteen altijd een 6
+. Als je op de B knop drukt en daarna de microbit schud, dan gooit de dobbelsteen een wisselkeurig getal tussen de 1 en de 6
+====
+
+.Uitwerking extra opdracht
+[%collapsible]
+====
+Dit is een antwoord, maar er zijn meerdere goede antwoorden!
+
+image::opdrachten/dobbelsteen/extra-opdracht-1.png[]
+
+image::opdrachten/dobbelsteen/extra-opdracht-2.png[]
+====

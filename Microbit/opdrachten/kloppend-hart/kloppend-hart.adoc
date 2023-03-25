@@ -1,0 +1,51 @@
+== Maak een kloppend hart met je Microbit
+
+De volgende opdracht gaat over het omtoveren van de Microbit in een kloppend hart! Nieuwsgierig? Klik dan op de opdracht om de tekst te bekijken. Bij deze opdracht zit geen YouTube filmpje.
+
+=== Zelf doen
+.Kloppend hart - deel I
+[%collapsible]
+====
+
+. Ga naar http://makecode.microbit.org/[MakeCode]
+. Klik op 'Nieuw project'
+. Probeer onderstaande code na te bouwen
+
+.Kloppend hart
+image::opdrachten/kloppend-hart/stap1.png[]
+
+Tips:
+
+* '_Wanneer knop A wordt ingedrukt_' vind je terug onder '_Invoer_'.
+* '_Doe x keer herhalen_' vind je terug onder '_Lussen_'.
+* '_Toon lichtjes_' vind je terug onder '_Basis_'.
+
+Als je wat meer uitdaging wilt, kun je als je klaar bent ook de extra opdracht nog doen.
+
+====
+.Kloppend hart - deel II
+[%collapsible]
+====
+
+Je kunt je kloppend hart wat meer detail geven door nog wat extra plaatjes toe te voegen.
+
+.Kloppend hart
+image::opdrachten/kloppend-hart/stap2.png[]
+
+Tip: Wanneer je met de rechter muisknop op het '_toon lichtjes_' blok klikt, kun je deze '_dupliceren_', oftewel een kopie hiervan maken.
+====
+
+.Zelf een bewegend plaatje ontwerpen
+[%collapsible]
+====
+Probeer eens zelf een bewegend plaatje te maken. Maak deze naast je eerder gemaakte _kloppend hart_. Door je eigen plaatje onder knop '*_B_*' te programmeren, kun je beide bewegende plaatjes afwisselend tonen.
+
+Ideeën:
+
+* Ronddraaiend pijltje
+* Vierkant of rondje dat steeds groter wordt
+* Schaakbord dat steeds van patroon veranderd
+
+.Voorbeeld
+image::opdrachten/kloppend-hart/eigen-plaatje.png[]
+====

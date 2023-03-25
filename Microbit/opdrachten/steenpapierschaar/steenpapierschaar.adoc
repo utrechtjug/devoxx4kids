@@ -1,0 +1,39 @@
+
+== Steen, Papier, Schaar
+
+In deze opdracht gaan we een digitale steen, papier, schaar maken.
+In plaats van je vingers te gebruiken om aan te geven welk voorwerp je kiest, gaan we gebruik maken van de microbit.
+
+Bekijk het filmpje en probeer steen, papier, schaar op je microbit te maken!
+
+=== Filmpje
+video::xQaE4dgO4l8[youtube,options="modest",width=640,height=480,start=166]
+
+
+=== Zelf doen
+
+. Ga naar http://makecode.microbit.org/[MakeCode]
+. Klik op 'Nieuw project'
+. Volg de instructies uit de video
+
+Tip: mocht het te snel gaan, zet de video dan even op pauze of open onderstaande screenshots!
+
+
+.Screenshots
+[%collapsible]
+====
+.Stap 1
+image::opdrachten/steenpapierschaar/stap1.png[]
+.Stap 2
+image::opdrachten/steenpapierschaar/stap2.png[]
+.Stap 3
+image::opdrachten/steenpapierschaar/stap3.png[]
+.Stap 4
+image::opdrachten/steenpapierschaar/stap4.png[]
+.Stap 5
+image::opdrachten/steenpapierschaar/stap5.png[]
+.Stap 6
+image::opdrachten/steenpapierschaar/stap6.png[]
+.Stap 7
+image::opdrachten/steenpapierschaar/stap7.png[]
+====
