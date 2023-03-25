@@ -220,6 +220,8 @@ bommen = this.physics.add.group();
 this.physics.add.collider(bommen, terreinGroep);
 this.physics.add.collider(speler, bommen, bomRaken, null, this);
 ----
+Het poppetje kan nu even niet bewegen, dit lossen we later op.
+
 Voeg onderstaande code toe aan het einde van de functie 'sterPakken' zodat er meer bommen komen hoe verder je komt:
 [#add-bommen2,source,js]
 ----
