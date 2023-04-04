@@ -1,0 +1,58 @@
+== Programmeer je naam in licht met een Microbit
+
+We gaan met wat hulp van een filmpje met de Microbit aan de slag. Als eerst gaan we proberen onze naam op de Microbit te tonen. Bekijk eerst het filmpje, en open daarna de opdracht.
+
+=== Filmpje
+
+video::ey6bCUwgXlg[youtube,options="modest",width=640,height=480,start=166]
+
+=== Zelf doen
+
+Nu gaan we hetzelfde proberen als in het filmpje, maar dan met jullie eigen namen.
+
+. Ga naar http://makecode.microbit.org/[MakeCode]
+. Klik op 'Nieuw project' om een nieuw project te openen en geef het een naam, bijvoorbeeld 'Namen tonen'.
+. Neem daar de blokken over zoals getoond in het filmpje en neem in het 'toon tekens' blok een van jullie namen over.
+. Nu mag de volgende het proberen. Zorg ervoor dat als er 'B' ingedrukt wordt de andere naam in jullie tweetal toont.
+
+Tip: mocht het te snel gaan, zet de video dan even op pauze of open onderstaande screenshots!
+
+.Screenshots
+[%collapsible]
+====
+.Stap 1
+image::opdrachten/naam/stap1.png[]
+.Stap 2
+image::opdrachten/naam/stap2.png[]
+.Stap 3
+image::opdrachten/naam/stap3.png[]
+.Stap 4
+image::opdrachten/naam/stap4.png[]
+.Stap 5
+image::opdrachten/naam/stap5.png[]
+.Stap 6
+image::opdrachten/naam/stap6.png[]
+.Stap 7
+image::opdrachten/naam/stap7.png[]
+.Stap 8
+image::opdrachten/naam/stap8.png[]
+====
+
+.Extra opdracht
+[%collapsible]
+====
+Doel van deze extra opdracht is jullie beide namen te laten zien
+
+Regels:
+
+. Als je op de A knop drukt dan moet de naam van de jongste persoon op het scherm komen te staan
+. Als je op de B knop drukt dan moet de naam van de oudste persoon op het scherm komen te staan
+====
+
+.Antwoord Extra opdracht
+[%collapsible]
+====
+Dit is een antwoord, maar er zijn meerdere goede antwoorden!
+
+image::opdrachten/naam/extra-opdracht-1.png[]
+====

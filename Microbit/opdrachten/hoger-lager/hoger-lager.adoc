@@ -1,0 +1,346 @@
+== Maak het spel Hoger-Lager op de Microbit
+
+Met deze opdracht ga je op de Microbit het spel *_Hoger-Lager_* maken.
+Zodra je de code op de Microbit hebt ingevoerd, verschijnt er op het scherm een willekeurig getal onder de honderd.  Het is de bedoeling om te raden of het volgende getal dat door de Microbit zal worden gegenereerd hoger of lager zal zijn dan het getoonde getal.
+
+Met een druk op knop A kan worden aangegeven dat de keus valt op ‘_lager_’, met een druk op knop ‘B’ kan worden gekozen voor ‘_hoger_’.
+
+Bij een juiste gok word een punt gescoord, bij een foute gok eindigt het spel en wordt de score getoond.
+
+Nieuwsgierig? Doorloop dan alle onderliggen stappen hieronder om het spel *_Hoger-Lager_* te maken.
+
+Bij deze opdracht zit geen YouTube filmpje.
+
+=== Zelf doen
+.Hoger-Lager - Start van het spel
+[%collapsible]
+====
+
+. Ga naar http://makecode.microbit.org/[MakeCode]
+. Klik op 'Nieuw project'
+. Probeer onderstaande code na te bouwen
+
+In de stappen wordt kort beschreven wat we nodig hebben. In de afbeelding zie je dan hoe het eruit komt te zien en bij de tips kun je zien, waar je bepaalde code blokken kunt vinden. Tussendoor kun je in de editor altijd je code even uitproberen.
+
+Start van het spel:
+
+Bij de start van het spel hebben we een aantal variabelen nodig. Een variabele is ideaal om bepaalde zaken, zoals een score of een willekeurig nummer bij te houden. De variabelen die we maken, kunnen we dan overal in de code gebruiken.
+
+======
+
+Stap I:
+
+* Voeg het blok '_bij opstarten_' toe.
+* Maak de variabelen '_nummer_', '_volgendnummer_' en '_score_' aan.
+* Stel de variabele '_nummer_' in op een willekeurige waarde tussen 0 en 10.
+* Stel de variabele '_volgendnummer_' in op een willekeurige waarde tussen 0 en 10.
+* Stel de variabele '_score_' in op 0.
+
+Resultaat:
+
+.De variabelen voor het spel
+image::opdrachten/hoger-lager/opstarten2.png[]
+
+Tips:
+
+* Voeg het blok '_bij opstarten_' vanuit '_Basis_' toe.
+* Maak variabelen aan bij '_Variabelen_'. (zie ook onderstaande afbeelding)
+* Voeg het blok '_stel ... in op .._' vanuit '_Variabelen_' toe.
+* Voeg  het blok '_kies willekeurig 0 tot 10_' vanuit '_Rekenen_' toe. (dupliceer deze na het aanmaken).
+
+.Maak een variabele
+image::opdrachten/hoger-lager/opstarten1.png[]
+
+======
+
+Stap II:
+
+* Voeg het blok '_toon nummer_' toe.
+* Voeg de variabele '_nummer_' toe.
+* Plaats de variabele in '_toon nummer_'.
+
+Resultaat:
+
+.De begin waarde wordt op het scherm getoond.
+image::opdrachten/hoger-lager/opstarten3.png[]
+
+Tips:
+
+* Voeg het blok '_toon nummer_' vanuit '_Basis_' toe.
+* Voeg de variabele vanuit '_Variabelen_' toe.
+
+====
+.Hoger-Lager - Knop A (lager)
+[%collapsible]
+====
+
+We gaan nu de code maken voor lager. Wanneer je denkt dat het volgende getal lager is, kun je dan op knop A drukken. Daarna zal de code die hieronder beschreven staat, uitgevoerd worden.
+
+Knop A voor Lager:
+
+======
+
+Stap I:
+
+* Schuif het blok '_bij opstarten_' even aan de kant om ruimte te maken. Gooi dit niet weg!
+* Voeg het blok '_wanneer knop A wordt ingedrukt_' toe.
+* Voeg het blok '_pauzeer (ms) 100_' toe.
+* Zet de pauze waarde op 500 ms.
+
+Resultaat:
+
+.Begin met een pauze van een halve seconde.
+image::opdrachten/hoger-lager/lager1.png[]
+
+Tips:
+
+* Voeg het blok '_wanneer knop A wordt ingedrukt_' vanuit '_Invoer_' toe.
+* Voeg het blok '_pauzeer (ms) ..._' vanuit '_Basis_' toe.
+
+======
+======
+
+Stap II:
+
+* Voeg het blok '_als waar dan anders_' toe.
+
+Resultaat:
+
+.Het logische blok '_als waar dan anders_' gaan we gebruiken om de variabelen te vergelijken.
+image::opdrachten/hoger-lager/lager2.png[]
+
+Tips:
+
+* Voeg het blok '_als waar dan anders_' vanuit '_Logisch_' toe.
+
+======
+======
+
+Stap III:
+
+Als de variabele '_volgendnummer_' kleiner of gelijk is aan het huidige nummer (variabele '_nummer_') dan hebben we een punt verdiend.
+Als dit niet zo is (anders), dan hebben we het spel verloren.
+
+* Voeg de variabelen '_volgendnummer_' en '_nummer_' toe.
+* Voeg het vergelijkingsblok '_0 = 0_' toe.
+* Stel het vergelijkingsblok in op: '_volgendnummer < = nummer_'. (Tekens zien er net even anders uit.)
+* Plaats het vergelijkingsblok in het vakje '_waar_'.
+
+Resultaat:
+
+.Het vergelijken van '_volgendnummer_' en '_nummer_' bepaalt het vervolg van de code.
+image::opdrachten/hoger-lager/lager3.png[]
+
+Tips:
+
+* Voeg de variabelen vanuit '_Variabelen_' toe.
+* Voeg het blok '_0 = 0_' vanuit '_Logisch_' ('_Vergelijking_') toe.
+
+======
+======
+
+Stap IV:
+
+Toon een vrolijke smiley als je goed hebt geraden en een verdrietige als het fout is.
+
+* Maak twee blokken '_toon lichtjes_'
+* Maak hier een vrolijke en verdrietige smiley van.
+* Plaats de vrolijke smiley in de lege ruimte onder '_als_'.
+* Plaats de verdrietige smiley in de lege ruimte onder '_anders_'.
+
+Resultaat:
+
+.De smiley laat zien of je het goed hebt of niet.
+image::opdrachten/hoger-lager/lager4.png[]
+
+Tips:
+
+* Voeg de variabelen vanuit '_Variabelen_' toe.
+* Voeg het blok '_toon lichtjes_' vanuit '_Basis_'.
+
+======
+======
+
+Stap V:
+
+Probeer je code in de editor maar eens uit. Tussendoor je code even testen is altijd goed! Dan ontdek je eerder of je ergens een foutje hebt gemaakt.
+
+======
+======
+
+Stap VI:
+
+Als je goed hebt geraden moeten we een aantal zaken regelen:
+
+* Score ophogen
+* Variabele '_nummer_ ' krijgt de waarde van variabele '_volgendnummer'. (We kunnen naar het volgende nummer om te raden of dit hoger/lager is.)
+* Variabele '_volgendnummer_ ' krijgt een nieuwe willekeurige waarde tussen 0 en 100.
+* De variabele '_nummer_' mag weer getoond worden.
+
+Gelukkig kunnen we hiervoor wat regels code kopiëren vanuit het blok '_bij opstarten'!
+
+* Voeg het blok '_verander ... met ..._' toe.
+* Stel dit blok zo in, dat de score wordt veranderd met 1. (Oftewel tel 1 bij de score op.)
+* Dupliceer de volgende blokken uit het blok  '_bij opstarten_':
+- '_stel nummer in op ..._'
+- '_stel volgendnummer in op ..._'
+- '_toon nummer nummer_'
+* Voeg de variabele '_volgendnummer_' toe.
+* Stel het blok '_stel nummer in op...' zo in, dat het nummer het volgendnummer wordt.
+
+Resultaat:
+
+.Alle code voor wanneer je het goed hebt geraden.
+image::opdrachten/hoger-lager/lager5.png[]
+
+Tips:
+
+* Voeg het blok '_verander score met ..._' vanuit '_Variabelen_' toe.
+* Voeg het blok '_toon lichtjes_' vanuit '_Basis_'.
+
+======
+======
+
+Stap VII:
+
+Als je fout hebt geraden moeten we ook een aantal zaken regelen:
+
+* Het volgende nummer tonen om aan te geven dat we het fout hebben.
+* De tekst '_Score: _' tonen samen met de gehaalde score.
+
+De meeste stappen zullen hiervan inmiddels al wel bekend zijn.
+
+* Voeg het blok '_toon nummer ..._' toe en dupliceer deze.
+* Voeg het blok '_toon tekens ..._' toe.
+* Voeg de variabelen '_volgendnummer_' en '_score_' toe.
+* Stel de blokken als volgt in:
+- toon nummer '_volgendnummer_'. (gebruik hier de juiste variabele)
+- toon tekens '_Score: _'.
+- toon nummer '_score_'. (gebruik hier de juiste variabele)
+
+Resultaat:
+
+.Alle code voor wanneer je het niet hebt geraden.
+image::opdrachten/hoger-lager/lager6.png[]
+
+Tips:
+
+* Deze zijn bekend. Mocht je iets niet vinden, kijk dan bij eerdere tips, of vraag iemand om hulp.
+
+======
+======
+
+Stap VII:
+
+Probeer je code in de editor maar eens uit. Tussendoor je code even testen is altijd goed! Dan ontdek je eerder of je ergens een foutje hebt gemaakt.
+
+======
+====
+
+.Hoger-Lager - Knop B (hoger)
+[%collapsible]
+====
+
+We gaan nu de code maken voor hoger. Je zou misschien verwachten dat je op de helft bent, maar eigenlijk zijn we al bijna klaar. Wanneer je denkt dat het volgende getal hoger is en je drukt op knop B, dan moet eigenlijk bijna dezelfde code uitgevoerd worden. Het enige dat echt anders is, is het vergelijken van de twee variabelen '_volgendnummer_' en '_nummer_'. We moeten nu gaan kijken of '_volgendnummer_' groter of gelijk is en niet kleiner of gelijk.
+
+Om snel het spel te kunnen spelen, kiezen we voor de makkelijke oplossing, namelijk het kopiëren van een grote stuk code en het aanpassen van een paar instellingen.
+
+Knop B voor Hoger:
+
+======
+
+Stap I:
+
+* Dupliceer het gehele blok '_wanneer knop A wordt ingedrukt_'. (Als dit niet lukt, vraag dan even om hulp.)
+* Schuif dit gekopieerde blok zo aan de kant, dat je goed kunt werken en overzicht hebt.
+* Verander knop '_A_' in '_B_'. (Pas nu wordt het blok actief. Er mogen geen twee blokken voor dezelfde knop zijn.)
+* Verander in het vergelijkingsblok '< =' aan in '> ='. (Tekens zien er niet even anders uit.)
+
+Resultaat:
+
+.Bijna gelijke code, alleen met een andere vergelijking en voor een andere knop.
+image::opdrachten/hoger-lager/hoger1.png[]
+
+.De _anders_ tak is helemaal hetzelfde gebleven.
+image::opdrachten/hoger-lager/hoger2.png[]
+
+Tips:
+
+* Zorg dat je de blokken netjes naast elkaar zet, dan hou je overzicht.
+
+======
+======
+
+Stap II:
+
+Probeer je zelfgemaakte spel eens uit!
+
+======
+====
+
+.Hoger-Lager - Code optimaliseren met Functies
+[%collapsible]
+====
+
+Zoals eerder aangegeven, hebben we voor de makkelijke oplossing gekozen door de code van knop A te kopiëren om snel de code voor knop B voor elkaar te krijgen. Dit is niet helemaal netjes. Het was netter geweest om de code die uitgevoerd moet worden als je het goed of fout raadt, in een aparte functie te stoppen. Deze functie kun je dan op elke plek in je code gaan aanroepen. Hiermee voorkom je dubbele code en maakt ook het onderhoud van je code makkelijker. Bij een wijziging hoef je namelijk niet elk gekopieerd stukje code aan te passen.
+
+Functies toevoegen:
+
+======
+
+Stap I:
+
+* Maak de volgende twee functies aan:
+- goed geraden
+- fout geraden
+
+Resultaat:
+
+.Twee lege functies.
+image::opdrachten/hoger-lager/functies1.png[]
+
+Tips:
+
+* Maak een functie aan vanuit '_Functies_'. Verander de naam '_doeIets_' in iets dat verteld wat de functie gaat doen.
+
+======
+======
+
+Stap II:
+
+De code die je uitvoert, wanneer je iets goed hebt geraden en wanneer je iets niet goed hebt geraden, kunnen we nu gaan verplaatsen naar de bijbehorende functies.
+
+Resultaat:
+
+.Functie 'goed geraden'.
+image::opdrachten/hoger-lager/functies2.png[]
+
+.Functie 'fout geraden'.
+image::opdrachten/hoger-lager/functies3.png[]
+
+.Voor knop A is de 'als waar dan anders' nu nog leeg.
+image::opdrachten/hoger-lager/functies4.png[]
+
+======
+======
+
+Stap III:
+
+Nu gaan we vanuit de code die bij knop A en B hoort op de juiste plekken de juiste functies aanroepen.
+
+* Voeg de aanroepblokken van de functies '_goed geraden_' en '_fout geraden_' toe.
+* Plaats deze op de juiste plek in het code blok van knop A.
+* Pas het code blok van knop B op dezelfde manier aan.
+
+Resultaat:
+
+.Je code ziet er nu een stuk overzichtelijker en minder complex uit.
+image::opdrachten/hoger-lager/functies5.png[]
+
+Tips:
+
+* Voeg de aanroepblokken van de functies toe vanuit '_Functies_'.
+
+======
+====
+

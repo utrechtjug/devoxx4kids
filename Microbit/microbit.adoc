@@ -1,0 +1,26 @@
+= Microbit Workshop
+Matthijs Thoolen; Cor Faber; Mike Padberg; Jorick van Rhenen;Ton van Bart; Steven Frederiks
+:Revision:  0.1
+:description: Devoxx4kids Microbit workshop
+:figure-caption!:
+:toc-title: Inhoudsopgave
+:toclevels: 1
+:toc:
+
+In deze workshop gaan we samen aan de slag met de Microbit. Aan de hand van een aantal video's maken we opdrachten met de Microbit. We beginnen eerst met een uitleg, want wat is die Microbit eigenlijk?
+
+== Wat is de microbit?
+
+In dit filmpje wordt uitgelegd wat een Microbit is en wat je er mee kunt doen.
+
+video::0EUzE_Q3W98[youtube,options="modest",width=640,height=480]
+
+Hopelijk is zo duidelijk wat we gaan doen. Heb je vragen? Steek dan zeker je hand even op!
+
+include::opdrachten/naam/naam.adoc[]
+include::opdrachten/kloppend-hart/kloppend-hart.adoc[]
+include::opdrachten/dobbelsteen/dobbelsteen.adoc[]
+include::opdrachten/kompas/kompas.adoc[]
+include::opdrachten/thermometer/thermometer.adoc[]
+include::opdrachten/steenpapierschaar/steenpapierschaar.adoc[]
+include::opdrachten/hoger-lager/hoger-lager.adoc[]
